@@ -1,0 +1,29 @@
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+interface AzargaCardProps {
+  ner: string;
+  imageUri: string; // зургийн зам Uri
+  onPress: () => void; // карт дээр дарахад ажиллах функц
+}
+
+export default function AzargaCard({
+  ner,
+  imageUri,
+  onPress,
+}: AzargaCardProps) {
+  return (
+    <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
+      {imageUri ? (
+        <Image source={{ uri: imageUri }} style={styles.image} />
+      ) : (
+        <>
+            <View style={[styles.image, styles.placeholder]} />
+            <Text style = {styles.hoosontext}>Зураг байхгүй байнав</Text>       
+        </>
+      )}
+      <Text style={styles.text}>{ner}</Text>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({});
