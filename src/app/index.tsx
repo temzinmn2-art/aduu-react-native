@@ -1,21 +1,21 @@
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
-import AzargaCard  from "@/components/aduu/AzargaCard";
-
+import AzargaCard from "@/components/aduu/AzargaCard";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 const JISHIEE_DATA = [
   { id: "1", ner: " Хөх азарганы сүрэг", image: null },
   { id: "2", ner: " Зээрд азарганы сүрэг", image: null },
   { id: "3", ner: " Хүрэн азарганы сүрэг", image: null },
+  { id: "4", ner: " Хүрэн азарганы сүрэг", image: null },
+  { id: "5", ner: " Хүрэн азарганы сүрэг", image: null },
+  { id: "6", ner: " Хүрэн азарганы сүрэг", image: null },
+  { id: "7", ner: " Хүрэн азарганы сүрэг", image: null },
 ];
 export default function Homescreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.headerTitle}>Малын мэдээлэл</Text>
+      <View style={styles.headerTitle}>
+        <Text style={styles.headerText}>Малын мэдээлэл</Text>
+      </View>
 
       <FlatList
         data={JISHIEE_DATA}
@@ -27,7 +27,7 @@ export default function Homescreen() {
             onPress={() => console.log(item.ner + " Дарагдлаа")}
           />
         )}
-        style = {{flex: 1}}
+        style={{ flex: 1 }}
       />
     </View>
   );
@@ -35,16 +35,22 @@ export default function Homescreen() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: "8%",
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "rgb(244, 241, 222)",
   },
   headerTitle: {
-    backgroundColor:"yellow",
+    backgroundColor: "rgb(212, 163, 115)",
     zIndex: 1,
     borderBottomWidth: 1,
     borderBottomColor: "black",
-    paddingTop: 60,
-    marginBottom : "2%",
+    height: "8%",
+    marginBottom: "2%",
+    justifyContent: "center",
   },
-
+  headerText: {
+    fontWeight: "bold",
+    fontSize: 20,
+    marginLeft: "5%",
+  },
 });

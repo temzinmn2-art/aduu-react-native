@@ -33,7 +33,7 @@ export default function AzargaCard({
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "green",
+    backgroundColor: "rgba(148, 166, 132, 0.57)",
     padding: 12,
     borderRadius: 12,
     alignItems: "center",
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 8,
-    borderColor: "white",
+    borderColor: "black",
     borderWidth: 1,
-    backgroundColor: "gray",
+    backgroundColor: "rgba(200, 200, 200, 0.71)",
   },
   placeholder: {
     alignItems: "center",
@@ -59,14 +59,13 @@ const styles = StyleSheet.create({
     fontSize: 10,
   },
   textContainer: {
-    flex: 1,       
-    justifyContent: 'center', 
+    flex: 1,
+    justifyContent: "center",
   },
   text: {
     fontWeight: "bold",
     fontSize: 15,
     marginLeft: 15,
-    flexShrink: 1, 
+    flexShrink: 1,
   },
-
 });
