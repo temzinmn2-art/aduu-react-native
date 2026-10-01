@@ -1,7 +1,7 @@
 import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 
 // Азарганы мэдээллийн хүснэгт
-export const azargaTable = sqliteTable('azarga', {
+export const AzargaTable = sqliteTable('azarga', {
   id: integer('id').primaryKey({autoIncrement: true}),
   ner: text('ner').notNull(),
   image: text('image'),
@@ -9,7 +9,7 @@ export const azargaTable = sqliteTable('azarga', {
 
 
 // Адууны мэдээллийн хүснэгт
-export const aduuTable = sqliteTable('aduu', {
+export const AduuTable = sqliteTable('aduu', {
   id: integer('id').primaryKey({ autoIncrement: true }), 
   ner: text('ner').notNull(),                            
   zus: text('zus').notNull(),                            
@@ -21,7 +21,7 @@ export const aduuTable = sqliteTable('aduu', {
 });
 
 //Адууны зургийн мэдээллийг хадгалах хүснэгт
-export const aduuImageTable = sqliteTable('aduu_image', {
+export const AduuImageTable = sqliteTable('aduu_image', {
   id: integer('id').primaryKey({autoIncrement: true}),
   aduuId: integer('aduu_id').references(() => aduuTable.id),
   imagePath: text('image').notNull(),
