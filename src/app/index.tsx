@@ -1,16 +1,18 @@
 import AzargaCard from "@/components/aduu/AzargaCard";
+import { useRouter } from "expo-router";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
 const JISHIEE_DATA = [
-  { id: "1", ner: " Хөх азарганы сүрэг", image: null },
-  { id: "2", ner: " Зээрд азарганы сүрэг", image: null },
-  { id: "3", ner: " Хүрэн азарганы сүрэг", image: null },
-  { id: "4", ner: " Хүрэн азарганы сүрэг", image: null },
-  { id: "5", ner: " Хүрэн азарганы сүрэг", image: null },
-  { id: "6", ner: " Хүрэн азарганы сүрэг", image: null },
-  { id: "7", ner: " Хүрэн азарганы сүрэг", image: null },
+  { id: 1, zus: " Хөх азарганы сүрэг", image: null },
+  { id: 2, zus: " Зээрд азарганы сүрэг", image: null },
+  { id: 3, zus: " Хүрэн азарганы сүрэг", image: null },
+  { id: 4, zus: " Хүрэн азарганы сүрэг", image: null },
+  { id: 5, zus: " Хүрэн азарганы сүрэг", image: null },
+  { id: 6, zus: " Хүрэн азарганы сүрэг", image: null },
+  { id: 7, zus: " Хүрэн азарганы сүрэг", image: null },
 ];
 export default function Homescreen() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.headerTitle}>
@@ -19,15 +21,15 @@ export default function Homescreen() {
 
       <FlatList
         data={JISHIEE_DATA}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <AzargaCard
-            ner={item.ner}
+            id={item.id}
+            zus={item.zus}
             imageUri={item.image}
-            onPress={() => console.log(item.ner + " Дарагдлаа")}
+            onPress={(clickedId) => router.push(`/${clickedId}`)}
           />
-        )}
-        style={{ flex: 1 }}
+        )} 
       />
     </View>
   );

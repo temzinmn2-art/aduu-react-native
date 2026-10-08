@@ -1,20 +1,25 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {useRouter} from 'expo-router';
 
 // Үндсэн дэлгэц дээрх азарганы мэдээллийг харуулах component. Component дээр дарахад тухайн азарганы сүргийн мэдээллийг харуулах хуудас руу шилжинэ.
 
 interface AzargaCardProps {
-  ner: string;
+  id: number,
+  zus: string;
   imageUri: string | null; // зургийн зам Uri
-  onPress: () => void; // карт дээр дарахад ажиллах функц
+  onPress: (id: number) => void; // карт дээр дарахад ажиллах функц
 }
 
 export default function AzargaCard({
-  ner,
+  id,
+  zus,
   imageUri,
   onPress,
 }: AzargaCardProps) {
+
   return (
-    <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
+    <TouchableOpacity style={styles.cardContainer} 
+    onPress={() => onPress(id)}>
       {imageUri ? (
         <Image source={{ uri: imageUri }} style={styles.image} />
       ) : (
@@ -25,7 +30,7 @@ export default function AzargaCard({
         </>
       )}
       <View style={styles.textContainer}>
-        <Text style={styles.text}>{ner}</Text>
+        <Text style={styles.text}>{zus}</Text>
       </View>
     </TouchableOpacity>
   );
