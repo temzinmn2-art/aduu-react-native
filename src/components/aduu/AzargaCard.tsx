@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {useRouter} from 'expo-router';
+import { Colors } from "../../constants/theme";
 
 // Үндсэн дэлгэц дээрх азарганы мэдээллийг харуулах component. Component дээр дарахад тухайн азарганы сүргийн мэдээллийг харуулах хуудас руу шилжинэ.
 
@@ -38,13 +39,13 @@ export default function AzargaCard({
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "rgba(148, 166, 132, 0.57)",
+    backgroundColor: Colors.aduuColor.cardBg,
     padding: 12,
     borderRadius: 12,
     alignItems: "center",
     flexDirection: "row",
     width: "88%",
-    marginBottom: 12,
+    marginTop: 10,
     marginLeft: "3%",
   },
   image: {
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: "black",
     borderWidth: 1,
-    backgroundColor: "rgba(200, 200, 200, 0.71)",
+    backgroundColor: Colors.aduuColor.imgBg,
   },
   placeholder: {
     alignItems: "center",

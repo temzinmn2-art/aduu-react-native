@@ -1,5 +1,6 @@
 import { Column } from "drizzle-orm";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Image } from "react-native";
+import { Colors } from "../../constants/theme";
 
 interface AduuMedeelelProps {
   id: number;
@@ -9,6 +10,7 @@ interface AduuMedeelelProps {
   tailbar: string | null;
   ezen: string;
   azargaId: number | null;
+  imageUri: string | null;
 }
 
 export default function AduuMedeelel({
@@ -19,9 +21,21 @@ export default function AduuMedeelel({
   tailbar,
   ezen,
   azargaId,
+  imageUri,
 }: AduuMedeelelProps) {
   return (
     <View style={styles.container}>
+      <View>
+         {imageUri ? (
+                <Image source={{ uri: imageUri }} style={styles.image} />
+              ) : (
+                <>
+                  <View style={[styles.image, styles.placeholder]}>
+                    <Text style={styles.hoosontext}>Зураг байхгүй байна</Text>
+                  </View>
+                </>
+              )} 
+      </View>
       <View style = {styles.innerContainer}>
         <View style={styles.infoRow}>
           <Text style={styles.label}>Зүс:</Text>
@@ -59,15 +73,31 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "rgba(0, 0, 0, 1)",
   },
+
+  image: {
+
+  },
+
+  placeholder:{
+
+  },
+
+  hoosontext:{
+
+  },
+
   innerContainer: {
     flex: 1,
   },
+
   infoRow: {
     flexDirection: "row",
   },
+
   label: {
     fontWeight: "bold",
   },
+
   value: {
     borderWidth: 1,
     padding: 1,
@@ -76,9 +106,9 @@ const styles = StyleSheet.create({
     marginLeft: 3,
     marginTop: 3,
     fontSize: 12,
-    backgroundColor: "rgba(234, 321,434,1)",
+    backgroundColor: Colors.aduuColor.background,
     borderRadius: 8,
-  },
+  }, 
   valueTailbar:{
     borderWidth: 1,
     width: 115,
