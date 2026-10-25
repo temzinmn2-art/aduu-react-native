@@ -16,19 +16,19 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.aduuColor.headerbackground,
-    paddingBottom: 12,
+    paddingBottom: 0,
     borderBottomWidth: 1,
     borderBottomColor: "black",
     position: "absolute",
     top: 0,
     left: 0,
-    right: 0, 
+    right: 0,
     zIndex: 10,
   },
   headerTitle: {
     height: 50,
     justifyContent: "center",
-    padding: 0,
+    margin: 0,
   },
   headerText: {
     fontWeight: "bold",
