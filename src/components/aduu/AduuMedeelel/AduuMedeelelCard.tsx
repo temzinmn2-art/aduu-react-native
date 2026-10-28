@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import { Colors } from "../../constants/theme";
+import { Colors } from "../../../constants/theme";
 
-interface AduuMedeelelProps {
+interface AduuMedeelelCardProps {
   id: number;
   zus: string;
   nas: string;
@@ -12,7 +12,7 @@ interface AduuMedeelelProps {
   imageUri: string | null;
 }
 
-export default function AduuMedeelel({
+export default function AduuMedeelelCard({
   id,
   zus,
   nas,
@@ -21,7 +21,7 @@ export default function AduuMedeelel({
   ezen,
   azargaId,
   imageUri,
-}: AduuMedeelelProps) {
+}: AduuMedeelelCardProps) {
   return (
     <View style={styles.container}>
       <View>

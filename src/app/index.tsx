@@ -12,7 +12,9 @@ const JISHIEE_DATA = [
   { id: 5, zus: " Хүрэн азарганы сүрэг", image: null },
   { id: 6, zus: " Хүрэн азарганы сүрэг", image: null },
   { id: 7, zus: " Хүрэн азарганы сүрэг", image: null },
-];export default function Homescreen() {
+];
+
+export default function Homescreen() {
   const router = useRouter();
   return (
     <View style={styles.container}>

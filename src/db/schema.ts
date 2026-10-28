@@ -15,7 +15,9 @@ export const AduuTable = sqliteTable('aduu', {
   nas: text('nas').notNull(),  
   nasniitoo: integer('nasniitoo'),                                    
   tailbar: text('tailbar'),    
-  ezen: text('ezen').notNull(),  
+  ezen: text('ezen').notNull(),
+  x:integer('x').notNull(),  
+  y:integer('y').notNull(),  
   azargaId: integer('azarga_id').references(() => AzargaTable.id),                                               
 });
 
